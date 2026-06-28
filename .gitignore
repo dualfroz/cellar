@@ -1,0 +1,17 @@
+# Dart tooling and package resolution
+# https://dart.dev/tools/private-files
+.dart_tool/
+.packages
+
+# Build output and generated docs
+build/
+doc/api/
+
+# Compiled kernels and snapshots
+*.dill
+*.snapshot
+
+# OS, logs and local environment
+.DS_Store
+*.log
+.env
