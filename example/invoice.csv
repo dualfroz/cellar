@@ -1,0 +1,10 @@
+Item,Qty,Unit,LineTotal
+Widget,3,4.50,=B2*C2
+Gadget,5,2.00,=B3*C3
+Gizmo,2,9.99,=B4*C4
+Subtotal,,,=SUM(D2:D4)
+Tax 23pct,,,"=ROUND(D5*0.23,2)"
+Total,,,=D5+D6
+Items,,,"=COUNT(B2:B4)"
+Avg line,,,"=ROUND(AVERAGE(D2:D4),2)"
+Note,,,"=IF(D7>40,""large order"",""small order"")"
