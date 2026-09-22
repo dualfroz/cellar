@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "sheets": [
+    {
+      "name": "Summary",
+      "cells": {
+        "A1": "Item",
+        "B1": "Value",
+        "A2": "Income",
+        "B2": "=SUM(IncomeAmounts)",
+        "A3": "Expenses",
+        "B3": "=SUM(Expenses!B2:B5)",
+        "A4": "Balance",
+        "B4": "=B2-B3",
+        "A5": "Savings rate",
+        "B5": "=IF(B2=0,0,B4/B2)",
+        "A6": "Largest expense",
+        "B6": "=INDEX(Expenses!A2:A5,MATCH(MAX(Expenses!B2:B5),Expenses!B2:B5,0))"
+      },
+      "formats": {
+        "B2": "#,##0.00 zl",
+        "B3": "#,##0.00 zl",
+        "B4": "#,##0.00 zl",
+        "B5": "0.0%"
+      }
+    },
+    {
+      "name": "Income",
+      "cells": {
+        "A1": "Source",
+        "B1": "Amount",
+        "A2": "Salary",
+        "B2": "8500",
+        "A3": "Freelance",
+        "B3": "1200",
+        "A4": "Interest",
+        "B4": "35.5"
+      }
+    },
+    {
+      "name": "Expenses",
+      "cells": {
+        "A1": "Category",
+        "B1": "Amount",
+        "A2": "Rent",
+        "B2": "3200",
+        "A3": "Food",
+        "B3": "1450",
+        "A4": "Transport",
+        "B4": "380",
+        "A5": "Utilities",
+        "B5": "520"
+      }
+    }
+  ],
+  "names": {
+    "IncomeAmounts": "'Income'!B2:B4"
+  }
+}

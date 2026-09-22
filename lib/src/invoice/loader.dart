@@ -54,7 +54,7 @@ String encodeInvoiceJson(Invoice invoice) {
           'description': line.description,
           'quantity': line.quantity,
           'unitPrice': line.unitPrice.amount,
-          'vat': line.vat.rate == 0 ? line.vat.label : (line.vat.rate * 100),
+          'vat': line.vat.rate == 0 ? line.vat.label : line.vat.percent,
           if (line.discountRate != 0) 'discount': line.discountRate,
           'unit': line.unit,
         },

@@ -11,7 +11,17 @@ class VatRate {
   static const zero = VatRate('0%', 0.0);
   static const exempt = VatRate('zw', 0.0);
 
-  static VatRate fromPercent(num percent) => VatRate('$percent%', percent / 100);
+  static VatRate fromPercent(num percent) {
+    final normalized = _normalizePercent(percent);
+    return VatRate('$normalized%', normalized / 100);
+  }
+
+  static num _normalizePercent(num percent) {
+    final rounded = (percent * 10000).round() / 10000;
+    return rounded == rounded.truncateToDouble() ? rounded.toInt() : rounded;
+  }
+
+  num get percent => _normalizePercent(rate * 100);
 
   @override
   bool operator ==(Object other) => other is VatRate && other.label == label && other.rate == rate;
