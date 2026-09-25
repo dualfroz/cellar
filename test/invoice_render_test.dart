@@ -7,7 +7,7 @@ Invoice invoice() => Invoice(
       number: 'FV/2026/07/001',
       issueDate: DateTime(2026, 8, 28),
       dueDate: DateTime(2026, 9, 11),
-      seller: const Party(name: 'Vulp Sp. z o.o.', address: 'Warszawa', taxId: 'PL1234567890'),
+      seller: const Party(name: 'Example Software Sp. z o.o.', address: 'Warszawa', taxId: 'PL1234567890'),
       buyer: const Party(name: 'Acme <Corp>', address: 'Krakow'),
       currency: Currency.pln,
       paymentTerms: '14 days',
